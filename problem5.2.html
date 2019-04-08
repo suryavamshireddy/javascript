@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>products</title>
+    <script>
+        function order() {
+            var id1 = document.getElementById("x").value;
+            var id2 = document.getElementById("y").value;
+            var id3 = document.getElementById("z").value;
+            var id4 = document.getElementById("a").value;
+            if (id1 == "" && id2 == "" && id3 == "" && id4 == "") {
+                alert("no item selected");
+            }
+            else {
+                mywin = open("", "mywindow", "width=500,height=500");
+                mywin.document.write("<table border=1>");
+                mywin.document.write("<caption>invoice</caption>");
+                mywin.document.write("<tr>");
+                mywin.document.write("<th>products</th>");
+                mywin.document.write("<th>quantity</th>");
+                mywin.document.write("<th>price</th>");
+                mywin.document.write("<th>total</th>");
+                mywin.document.write("</tr>");
+
+                if (id1 > 0) {
+                    mywin.document.write("<tr>");
+                    mywin.document.write("<th>barbiedoll</th>");
+                    mywin.document.write("<th>"+id1+"</th>");
+                    mywin.document.write("<th>20</th>");
+                    mywin.document.write("<th>"+id1*20+"</th");
+                    mywin.document.write("</tr>");
+                }
+                if (id2 > 0) {
+                    mywin.document.write("<tr>");
+                    mywin.document.write("<th>calculator</th>");
+                    mywin.document.write("<th>" +id2+ "</th>");
+                    mywin.document.write("<th>30</th>");
+                    mywin.document.write("<th>"+ id2 * 30 +"</th");
+                    mywin.document.write("</tr>");
+                }
+                if (id3 > 0) {
+                    mywin.document.write("<tr>");
+                    mywin.document.write("<th>mobilephone</th>");
+                    mywin.document.write("<th>"+id3+"</th>");
+                    mywin.document.write("<th>40</th>");
+                    mywin.document.write("<th>"+id3*40 +"</th");
+                    mywin.document.write("</tr>");
+                }
+                if (id4 > 0) {
+                    mywin.document.write("<tr>");
+                    mywin.document.write("<th>lgdvd</th>");
+                    mywin.document.write("<th>"+id4+"</th>");
+                    mywin.document.write("<th>50</th>");
+                    mywin.document.write("<th>"+id4*50 +"</th");
+                    mywin.document.write("</tr>");
+                }
+
+
+            }
+        }
+    </script>
+</head>
+
+<body bgcolor="cyan">
+    <table border="1">
+        <h1>products</h1>
+        <tr>
+            <td>
+                name
+            </td>
+            <td>description</td>
+            <td>price</td>
+            <td>quality</td>
+        </tr>
+
+        <tr>
+            <td>barbiedoll</td>
+            <td>beautiful</td>
+            <td>20</td>
+            <td>
+                <input type="text" id="x" />
+            </td>
+        </tr>
+        <tr>
+            <td>calculator</td>
+            <td>calculator with latest features</td>
+            <td>30</td>
+            <td>
+                <input type="text" id="y" />
+            </td>
+        </tr>
+        <tr>
+            <td>mobilephones</td>
+            <td>camera,java games,gprs</td>
+            <td>40</td>
+            <td>
+                <input type="text" id="z" />
+            </td>
+        </tr>
+        <tr>
+            <td>lgdvd</td>
+            <td>5disc changer</td>
+            <td>50</td>
+            <td>
+                <input type="text" id="a" />
+            </td>
+        </tr>
+    </table>
+
+
+    <button onclick="order();">order</button>
+
+
+
+
+</body>
+
+</html>

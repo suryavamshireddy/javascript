@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    function compute(){
+        var principal=document.getElementById("loan").value;
+        var rate=document.getElementById("interest").value;
+        var time=document.getElementById("period").value;
+        var givenTotalAmount=(principal*Math.pow((1+(rate/100)),time));
+        var compoundinterest=givenTotalAmount-principal;
+        var monthlypremium=givenTotalAmount/(time*12);
+        document.getElementById("emi").setAttribute("value",monthlypremium);
+        document.getElementById("amountTotal").setAttribute("value",givenTotalAmount);
+        document.getElementById("ci").setAttribute("value",compoundinterest);
+       
+    }
+    </script>
+</head>
+<body>
+    <h1>enter loan information</h1>
+    <table>
+        <tr>
+            1)amount of loan(any currency)   :&nbsp
+            <tr><input type="text"id="loan"</tr><br><br>
+            <tr>
+                2)annual percentage rate of interest:&nbsp
+                <tr><input type="text"id="interest"required pattern="[7-9],1[0-5]"</tr><br><br>
+            </tr>
+            <tr>
+                3)repayment period in years : &nbsp
+                <tr><input type="text" id="period"</tr><br><br>
+                </tr>
+            </tr>
+            
+        </tr>
+    </table>
+    <button onclick="compute()">compute</button>
+    <h1>payment information</h1>
+    <table>
+        <tr>
+                1)your montly payment will be  :&nbsp
+            <tr><input type="text"id="emi" </tr><br><br>
+            <tr>
+                2)your total payment will be :&nbsp
+                <tr><input type="text"id="amountTotal"</tr><br><br>
+            </tr>
+            <tr>
+                3)your total interest payment will be &nbsp
+                <tr><input type="text" id="ci"</tr><br><br>
+                </tr>
+            </tr>
+            
+        </tr>
+    </table>
+
+</body>
+</html>

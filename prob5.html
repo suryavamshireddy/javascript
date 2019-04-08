@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> script embedded in html documment</title>
+    <p style="border-bottom:2px dotted black; width: 200px">script embedded in head tags</p>
+    <script>
+        var headvar=10;
+        document.write("the value stored in <i>headvar</i> is" +headvar);
+    </script>
+</head>
+<body>
+    <p style="border-bottom:2px dotted black;width:200px">script embedded in body tag</p>
+    <script>
+        var bodyvar=65;
+        document.write("the value stored in <i>bodyvar</i>   is" +bodyvar);
+        </script>
+    <hr>
+<script src="common.js"></script>
+
+    <script>
+    addnos(headvar,bodyvar);
+    </script>
+    <hr>
+</body>
+</html>
